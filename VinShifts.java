@@ -28,6 +28,7 @@ public class VinShifts {
 			if (phrase[i] == '\n') continue;
 			System.out.print(phrase[i]);
 			phrase[i] = (char)(phrase[i] - shifts[counter]);
+			if (phrase[i] < 'A') phrase[i] = (char)('Z' + 1 - ('A' - phrase[i]));
 			System.out.println(" " + phrase[i]);
 			counter = (counter + 1)%4;
 		}
