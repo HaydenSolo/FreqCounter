@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class FreqCounter {
 	private FreqCounter() {
-		splitToFour("WIEVHSMYRSMCVBPROJEFWPCQPQUVHSSEDNEHUPMLRINDUVNPHSSUFJEPFFFKFUIQQDL\n" +
+		String test = "WIEVHSMYRSMCVBPROJEFWPCQPQUVHSSEDNEHUPMLRINDUVNPHSSUFJEPFFFKFUIQQDL\n" +
 				"CVTIEWIEUKPCMZBVGUJDGUUHGQPVGOEEUFSIDHEHQZBRGEFLERNPWWFRRUPGTDNMG\n" +
 				"UDRGDUEFDQRQJSAOFBLNHETCSFWQUNWJLDHYDTRGOFAUHEIPWPAPRNNKSPTGQUCQP\n" +
 				"QUVHSNGWXOTNVSGGCYCQBUVRDRCWJCIRWETQNEPWUOEROTTRMIVVQEQSMEVKFGQY\n" +
@@ -20,7 +20,25 @@ public class FreqCounter {
 				"PRGABMROFAHHXBGQFVQOFNVZPROVXETHEEXHMORHEBAAFRQASEUHBREKFRUZIOYDO\n" +
 				"TGGUOODLEORSEGIGIELFNVXTEQIDOOSVTGUGAELMIVLFSVKFYFHWENRQEFDUOYQDRK\n" +
 				"HSWQUNWJLDHORWEFWIRQXHHCQFTYRSKUHODKQHOWWJMRRSTCQUAPQPUPFFMGQUS\n" +
-				"VKFITGJAIQPSVLDWQUNANVPCQQTTCQULAZFAXHETJUPUIKUHGQFTYRSKDXUTJLT\n");
+				"VKFITGJAIQPSVLDWQUNANVPCQQTTCQULAZFAXHETJUPUIKUHGQFTYRSKDXUTJLT\n"
+		System.out.print("Please enter encrypted text ");
+        	String result;
+        	while (true) {
+            		result = "";
+            		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+            		try {
+                		while (!result.matches("[A-Za-z]+")) {
+                    			result = input.readLine();
+                    			if (!result.matches("[A-Za-z]+")) {
+                        			System.out.print("Must be a proper text: ");
+                    			}		
+                		}
+                		break;
+            		} catch (Exception e) {
+                		System.out.print("Please enter a letter: ");
+            		}
+        	}	
+		splitToFour(result);
 	}
 
 	private void splitToFour(String s) {
